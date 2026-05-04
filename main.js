@@ -38,19 +38,18 @@
 // rootEl.append(toDo)
 
 
-const numbers = [1, 5, 10, 15, 20]
-const newNumbers = numbers.map( n => n+10)
+// const numbers = [1, 5, 10, 15, 20]
+// const newNumbers = numbers.map( n => n+10)
 // console.log(newNumbers) // [11, 15, 20, 25, 30] ⬅️ Итоговый результат
 
-const names = ["Alice", "Bob", "Charlie", "Diana"]
-const nameInfo = names.map( (n) => {
-   return {
-    name: n,
-    length: n.length
-  }
-}
- 
-)
+// const names = ["Alice", "Bob", "Charlie", "Diana"]
+// const nameInfo = names.map( (n) => {
+//   return {
+//     name: n,
+//     length: n.length
+//   }
+// })
+
 // console.log(nameInfo)
 // ⬇️ Итоговый результат
 // [
@@ -60,31 +59,184 @@ const nameInfo = names.map( (n) => {
 //   { name: 'Diana', length: 5 }
 // ]
 
-const products = [
-  { name: 'Laptop', price: 1000},
-  { name: 'Mouse', price: 50},
-  { name: 'Keyboard', price: 80},
-]
+// const products = [
+//   { name: 'Laptop', price: 1000},
+//   { name: 'Mouse', price: 50},
+//   { name: 'Keyboard', price: 80},
+// ]
 
-const productsWithFinalPrice = products.map(
-  (p) => {
-    return {...p, finalPrice: (p.price-(p.price * 0.15))}
-  }
-)
+// const productsWithFinalPrice = products.map(
+//   (p) => {
+//     return {...p, finalPrice: (p.price-(p.price * 0.15))}
+//   }
+// )
 
-// console.log(productsWithFinalPrice);
+// // console.log(productsWithFinalPrice);
 
-const employees = [
-  {name: 'Alice', salary: 50000, experience: 3},
-  {name: 'Bob', salary: 60000, experience: 5},
-  {name: 'Charlie', salary: 45000, experience: 2},
-]
+// const employees = [
+//   {name: 'Alice', salary: 50000, experience: 3},
+//   {name: 'Bob', salary: 60000, experience: 5},
+//   {name: 'Charlie', salary: 45000, experience: 2},
+// ]
 
-const employeesWithTotal = employees.map(
-  e => {
-    return {...e, totalSalary: e.salary + (e.salary * (0.05 * e.experience)) }
-  }
-)
+// const employeesWithTotal = employees.map(
+//   e => {
+//     return {...e, totalSalary: e.salary + (e.salary * (0.05 * e.experience)) }
+//   }
+// )
 
-console.log(employeesWithTotal);
+// console.log(employeesWithTotal);
 
+
+// class painmontProssecor
+
+
+// console.log(a);
+
+// var a = 4
+
+// function rus() {
+
+//   let a = 0
+  
+//   function amr(){
+//     a++
+//   }
+
+//   // return amr()
+
+// }
+
+// function createCounter() { 
+//   let count = 0; // Добавляем return, чтобы функция не исчезла 
+//   return function() { count++; return count; }; 
+// }
+
+
+// let i = rus()
+
+// for (var i=1; i<10; i++) {
+//   console.log(i);  
+// }
+
+// for (let i = 0; i < 3; i++) { 
+//   console.log(i)
+//   setTimeout(() => { console.log(i);  }, 100);
+// }
+
+// console.log('1'); 
+
+// setTimeout(
+//   () => { console.log('2'); }, 0); 
+
+// Promise.resolve().then(
+//   () => { console.log('3'); }); 
+
+// console.log('4')
+
+// 1 4 3 2etTimeout(() => { console.log('Timeout 1'); Promise.resolve().then(() => { console.log('Promise inside Timeout'); }); }, 0); setTimeout(() => { console.log('Timeout 2'); }, 0); Promise.resolve().then(() => { console.log('Promise 1'); }); console.log('End');
+
+
+// async function first() {
+//     console.log('9');
+//     await second();
+//     console.log('10');
+// }
+
+// async function second() {
+//     console.log('11');
+// }
+
+// console.log('1');
+
+// setTimeout(() => console.log('2'), 0);
+
+// first();
+
+// new Promise((res) => {
+//     console.log('3');
+//     res();
+// }).then(() => console.log('4'));
+
+// console.log('5');
+
+// 1 9 11 10 5 3 4 2
+
+
+// const person = new Object({
+//   name: 'Ura',
+//   age: 23,
+//   greet: function() {
+//     console.log('Greet');    
+//   }
+// }) 
+
+// Object.prototype.rustam = function() {
+//   console.log('Rustam');  
+// }
+
+// let Diana = new String("sd")
+
+// function ttt() {
+//     console.log(this);    
+// }
+
+// let person = {
+//     name: "FFF",
+//     sayHello: ttt
+// }
+
+// let person2 = {
+//     name: 'Ura',
+//     city: 'Ufa',
+//     job: 'MVD',
+//     func: ttt,
+//     logInfo: function() {
+//         console.log(`name is ${this.name}`);
+//         console.log(`city is ${this.city}`);        
+//     }
+// }
+
+// let person3 = {
+//     name: 'Lena',
+//     city: 'Kyiv'
+// }
+
+// person2.logInfo.bind(person3)()
+
+// console.log(person3);
+
+
+function one(){
+    console.log('one');
+    
+}
+function two(){
+    one()
+    console.log('two');
+}
+function three(){
+    two()
+    console.log('three');
+}
+
+// three()
+
+function factorial(n) {
+    if(n<2) {
+        return 1
+    }
+    return console.log(n * factorial(n-1))
+}
+
+factorial(50)
+
+console.log('1'); // Sync
+
+setTimeout(() => console.log('2'), 0); // Macrotask
+
+Promise.resolve().then(() => console.log('3')); // Microtask
+
+console.log('4'); // Sync
+
+// Output order: 1, 4, 3, 2
