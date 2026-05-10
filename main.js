@@ -207,36 +207,160 @@
 // console.log(person3);
 
 
-function one(){
-    console.log('one');
+// function one(){
+//     console.log('one');
     
-}
-function two(){
-    one()
-    console.log('two');
-}
-function three(){
-    two()
-    console.log('three');
-}
+// }
+// function two(){
+//     one()
+//     console.log('two');
+// }
+// function three(){
+//     two()
+//     console.log('three');
+// }
 
-// three()
+// // three()
 
-function factorial(n) {
-    if(n<2) {
-        return 1
-    }
-    return console.log(n * factorial(n-1))
-}
+// function factorial(n) {
+//     if(n<2) {
+//         return 1
+//     }
+//     return console.log(n * factorial(n-1))
+// }
 
-factorial(50)
+// factorial(50)
 
-console.log('1'); // Sync
+// console.log('1'); // Sync
 
-setTimeout(() => console.log('2'), 0); // Macrotask
+// setTimeout(() => console.log('2'), 0); // Macrotask
 
-Promise.resolve().then(() => console.log('3')); // Microtask
+// Promise.resolve().then(() => console.log('3')); // Microtask
 
-console.log('4'); // Sync
+// console.log('4'); // Sync
 
-// Output order: 1, 4, 3, 2
+// // Output order: 1, 4, 3, 2
+
+
+// let car = { model: "Toyota" };
+// car = { model: "Honda" };
+// let bike = car;
+// bike = 
+
+// // car = { model: "Honda" };
+// // car.model = "Honda" 
+
+// console.log(bike.model);
+
+// function changeArray(arr) {
+//   arr.push(100);  // [10, 20, 100]
+  
+//   3]; // [1, 2, 3, 200]
+//   arr.push(200);
+//   console.log(arr);
+  
+// }
+
+// const numbers = [10, 20];
+// changeArray(numbers);
+// console.log(numbers);
+
+
+// const obj1 = { value: 5 };
+// const obj2 = { value: 5 };
+// const obj3 = obj1;    //  { value: 5 };
+
+// console.log(obj1 === obj2);  // false
+// console.log(obj1 === obj3);  // true
+
+
+// const original = {
+//   name: "Kate",
+//   address: { city: "Moscow" }
+// };
+
+// // const copy = original;
+// const copy = {...original};
+// copy.name = "Gulnara";
+// copy.address.city = "SPB";
+
+// console.log(original.name); //"Kate"
+// console.log(original.address.city); // "SPB"
+
+
+
+// let x = { count: 1 };
+
+// function increment(obj) {
+//   obj.count++;    //2
+//   obj = { count: 10 };
+//   obj.count++;  //11
+// }
+
+// increment(x);
+// console.log(x.count);   //2
+
+// let a = 5;
+// let b = a;
+// a = 6;
+
+
+// let a = [1]; 
+// let b = a; 
+// a.push(2);
+
+// let objects = [{ x: 1 }, { x: 2 }];
+
+// for (let obj of objects) {
+//   obj = { x: 999 };
+//   console.log();
+  
+// }
+
+// console.log(objects);
+
+
+// let objects = [{ x: 1 }, { x: 2 }];
+
+// for (let i = 0; i < objects.length; i++) {
+//   objects[i] = { x: 999 };
+// }
+
+// console.log(objects);
+
+// const a = { n: NaN };
+// const b = { n: NaN };
+
+// console.log(isNaN('u'))
+
+// console.log(a.n === b.n); //true
+// console.log(a === b); //false
+
+// let str1 = "hello";
+// let str2 = new String("hello");
+
+// console.log(str1 === str2);
+// console.log(str1 == str2);
+// console.log(str1);
+// console.log(str2);
+
+// function createCounter() {
+//   let obj = { count: 0 };
+//   return function() {
+//     obj.count++; //{ count: 1 }
+//     return obj; //{ count: 1 }
+//   };
+// }
+
+// const inc1 = createCounter();
+// const inc2 = createCounter();
+
+// console.log(inc1() === inc1());
+// console.log(inc1() === inc2());
+// console.log(inc1())
+// console.log(inc2())
+
+// let x = 5;
+// let y = 10;
+// [x, y] = [y, x];
+// console.log(x, y); //10 5
