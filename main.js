@@ -498,4 +498,26 @@
 // //'1'  '4' 'promise 1' 'promise 2' 'setTimeout 1' 'promise setTimeout' 'setTimeout 2'
 
 
+// task 48
+
+// function processData(data) {
+//     try {
+//         if(!data) {
+//             throw new TypeError('Data is required');
+//         }
+//         if (data.status === 'error') {
+//             throw new Error('Invalid status');
+//         }
+
+//         return data.value.toUpperCase();
+//     } catch (err) {
+//         if (err instanceof TypeError) {
+//             return 'TypeError';
+//         }
+//         return err.message;
+//     }
+// }
+
+// console.log(processData({ status: 'error', value: 'test'}))
+// console.log(processData(null))
  
