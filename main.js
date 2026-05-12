@@ -455,4 +455,47 @@
 
 // // 'Sync'  'Promise 1' 'Timeout 2' 'Promise in Timeout 2' 'Timeout 1' 'Timeout 3'
 
+
+// task 46
+
+// function factorial(n) {
+//     let result = 1;
+//     for (let i=n; i>1; i--){
+//         result *= i;
+//     }
+//     return result;
+// }
+
+// console.log(factorial(111));
+
+
+// task 47
+
+// console.log('1');
+
+// setTimeout(() => {
+//     console.log('setTimeout 1');
+//     Promise.resolve().then(() => {
+//         console.log('promise setTimeout');        
+//     })
+    
+// }, 0)
+
+// setTimeout( () => {
+//     console.log(('setTimeout 2'));    
+// }, 0)
+
+// Promise.resolve().then(() => {
+//     console.log('promise 1');
+// })
+
+// Promise.resolve().then(() => {
+//     console.log('promise 2');
+// })
+
+// console.log('4');
+
+// //'1'  '4' 'promise 1' 'promise 2' 'setTimeout 1' 'promise setTimeout' 'setTimeout 2'
+
+
  
