@@ -364,3 +364,95 @@
 // let y = 10;
 // [x, y] = [y, x];
 // console.log(x, y); //10 5
+
+
+// task 41
+
+// function analyze(...items) {
+//     const [first, ...rest] = items;   //first = {id: 42, name: 'Item'}, rest=['a', 'b']
+//     const {length} = [...rest, 'bonus']; //length=3
+//     const result = {
+//         ...first,         //id: 42, name: 'Item'
+//         count: length,    // count: 3
+//     };
+
+//     console.log(result);
+// }
+
+// console.log(analyze({id: 42, name: 'Item'}, 'a', 'b'));
+
+
+// task 42
+
+// let x = 5;
+// let result = typeof (x + '10')
+
+// console.log(result);
+
+
+// task 43
+
+// function createCounter() {
+//     let count = 0;
+
+//     return {
+//         increment(){
+//             count++;
+//             return count;
+//         },
+//         decrement(){
+//             count--;
+//             return count;
+//         },
+//         getValue(){
+//             return count;
+//         }
+//     };
+// }
+
+// const counter1 = createCounter();
+// const counter2 = createCounter();
+
+// counter1.increment(); // count = 1
+// counter1.increment(); // count = 2
+// counter2.increment(); // count = 1
+// counter1.increment(); // count = 3
+
+// console.log(counter1.getValue() + counter2.getValue());  // 3 + 1 = 4
+
+
+// task 44
+
+// function highlight(strings, ...values) {
+//     return strings.reduce((result, str, i) => {
+//         const value = values[i] ? `<span>${values[i]}</span>` : '';
+//         return result + str + value;
+//     }, '');
+// }
+
+// const language = 'JavaScript';
+// const years = 10;
+
+// const result = highlight`I have been coding in ${language} for ${years} years` ;
+
+// console.log(result); //I have been coding in <span>JavaScript</span> for <span>10</span> years
+
+
+// task 45
+
+// setTimeout(() => console.log('Timeout 1'), 100);
+
+// setTimeout(() => {
+//     console.log('Timeout 2');
+//     Promise.resolve().then(() => console.log('Promise in Timeout 2'));
+// }, 50);
+
+// Promise.resolve().then(() => console.log('Promise 1'));
+
+// setTimeout(() => console.log('Timeout 3'), 150);
+
+// console.log('Sync')          
+
+// // 'Sync'  'Promise 1' 'Timeout 2' 'Promise in Timeout 2' 'Timeout 1' 'Timeout 3'
+
+ 
