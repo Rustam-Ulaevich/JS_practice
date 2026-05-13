@@ -521,3 +521,24 @@
 // console.log(processData({ status: 'error', value: 'test'}))
 // console.log(processData(null))
  
+
+// task 49
+
+const memoryLeak = () => {
+    const cache = new Map();
+    const weakCache = new WeakMap();
+
+    const objKey = {id: 123};
+    const data = {name: 'User data', value: 42};
+
+    const result = { 
+        map: cache.has(objKey),
+        weakMap: weakCache.has(objKey)
+    }
+
+    return result
+}
+
+console.log(memoryLeak());
+
+
