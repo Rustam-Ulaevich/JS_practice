@@ -524,21 +524,86 @@
 
 // task 49
 
-const memoryLeak = () => {
-    const cache = new Map();
-    const weakCache = new WeakMap();
+// const memoryLeak = () => {
+//     const cache = new Map();
+//     const weakCache = new WeakMap();
 
-    const objKey = {id: 123};
-    const data = {name: 'User data', value: 42};
+//     const objKey = {id: 123};
+//     const data = {name: 'User data', value: 42};
 
-    const result = { 
-        map: cache.has(objKey),
-        weakMap: weakCache.has(objKey)
-    }
+//     const result = { 
+//         map: cache.has(objKey),
+//         weakMap: weakCache.has(objKey)
+//     }
 
-    return result
-}
+//     return result
+// }
 
-console.log(memoryLeak());
+// console.log(memoryLeak());
 
 
+// task 50
+
+// const user = {
+//   name: "John",
+//   meta: { score: 100 }   // 999
+// };
+// const copy = Object.assign({}, user); 
+// copy.meta.score = 999;       
+// copy.name = "Bob";
+// console.log(user.meta.score);   //999
+// console.log(user.name);         //Jhon
+
+
+// task 51
+
+// function update(obj) {
+//   obj.value = 42;
+//   obj = { value: 100 };  
+//   obj.value = 200;
+// }
+// const data = { value: 1 };
+// update(data);
+// console.log(data.value);  //42
+
+
+// task 52
+
+// let objects = [{ x: 1 }, { x: 2 }];
+// for (let i = 0; i < objects.length; i++) {
+//   objects[i] = { x: 999 };
+// }
+// console.log(objects);
+
+
+// task 53
+
+// const obj = Object.freeze({ value: 1 });
+// const obj2 = obj;
+// obj2.value = 2;
+// console.log(obj.value);
+
+
+// task 54
+
+// const users = [ 
+//     { name: "John", age: 25, active: true }, 
+//     { name: "Jane", age: 17, active: false }, 
+//     { name: "Bob", age: 30, active: true }, 
+//     { name: "Alice", age: 16, active: true } 
+// ];
+
+// const old = users.filter( el => el.age >= 20 )
+// console.log(old);
+
+// const userPush = users.push({name: "Jocccchn", age: 225, active: false})
+
+// console.log(userPush, 'userPush');
+// console.log(users);
+
+// const old2 = users.reduce( (acc, user ) => {
+//     if(user.age >= 20 ){
+//        acc.push(user) 
+//     }
+//     return acc
+// }, [])
