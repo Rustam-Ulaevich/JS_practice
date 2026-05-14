@@ -607,3 +607,117 @@
 //     }
 //     return acc
 // }, [])
+
+
+// task 55
+
+const words = [
+  'javascript', 'react', 'javascript', 'html', 
+  'css', 'react', 'javascript', 'node', 'css'
+];
+
+const upWords = words.reduce( (acc, el) => {
+  const copy = [...acc]
+  copy.push(el.toUpperCase())
+  return copy
+}, [])
+
+const longWORDS = words.reduce((acc, word) => {
+  // Создаем новый массив: копируем старый и пишем в конец новое измененное слово
+  const nextAcc = [...acc, word.toUpperCase()]; 
+  return nextAcc;
+}, [])
+
+
+// const redObj = words.reduce( (acc, el) => {
+//   acc[el] = (acc[el] || 0) + 1
+ 
+//   return acc
+// }, {})
+
+
+const obj = {
+  javascript: 3,
+  react: 2,
+  html: 1,
+  css: 2,
+  node: 1
+}
+
+
+console.log(Object.keys(obj));
+console.log(Object.values(obj));
+console.log(Object.entries(obj));
+
+const formData = {
+  name: "Иван",
+  email: "",
+  phone: undefined,
+  city: "Москва"
+};
+
+const cleanData = Object.fromEntries(
+  Object.entries(formData).filter(([key, value]) => !value )
+);
+
+console.log(cleanData);
+
+const formData = {
+  name: "Иван",
+  email: "",
+  phone: undefined,
+  city: "Москва"
+};
+
+
+const user = {
+  id: 101,
+  name: 'Иван',
+  age: null, // это поле надо удалить
+  role: 'admin',
+  email: undefined // это поле тоже надо удалить
+};
+
+// Превращаем в массив пар, фильтруем через reduce и собираем обратно в объект
+const cleanUser = Object.entries(user).reduce((acc, [key, value]) => {
+  if (value !== null && value !== undefined) {
+    acc[key] = value; // Наполняем чистый объект
+  }
+  return acc;
+}, {});
+
+console.log(1 && 5);
+// Вывод: { id: 101, name: 'Иван', role: 'admin' }
+
+const pricesInUSD = { apple: 2, banana: 1.5, orange: 3 };
+const EXCHANGE_RATE = 90;
+
+const pricesInRUB = Object.entries(pricesInUSD).reduce((acc, [fruit, price]) => {
+  acc[fruit] = price * EXCHANGE_RATE;
+  return acc;
+}, {});
+
+console.log(pricesInRUB);
+// Вывод: { apple: 180, banana: 135, orange: 270 }
+const stock = {
+  notebooks: 5,
+  pens: 120,
+  pencils: 80,
+  erasers: 15
+};
+
+const totalItems = Object.values(stock).reduce((acc, count) => acc + count, 0);
+
+console.log(totalItems); // Вывод: 220
+const serversArr = [
+  { id: 'srv-1', ip: '192.168.1.1', status: 'online' },
+  { id: 'srv-2', ip: '192.168.1.2', status: 'offline' }
+];
+
+const serversMap = serversArr.reduce((acc, server) => {
+  acc[server.id] = server;
+  return acc;
+}, {});
+
+console.log(serversMap['srv-1']); 
+// Вывод: { id: 'srv-1', ip: '192.168.1.1', status: 'online' } (нашли мгновен
