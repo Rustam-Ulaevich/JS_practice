@@ -725,23 +725,42 @@
 
 // task 56
 
-async function processValues() {
-  try {
-    // debugger
-    console.log('Start');
-    const a = await Promise.resolve('First');
-    console.log(a);
-    const b = await Promise.reject('Error');
-    console.log(b);
-    return 'Done';
-  }catch(err) {
-    console.log(err)
-    return 'Recovered';
-  }finally {
-    console.log('Finally')
-  }
-}
+// async function processValues() {
+//   try {
+//     // debugger
+//     console.log('Start');
+//     const a = await Promise.resolve('First');
+//     console.log(a);
+//     const b = await Promise.reject('Error');
+//     console.log(b);
+//     return 'Done';
+//   }catch(err) {
+//     console.log(err)
+//     return 'Recovered';
+//   }finally {
+//     console.log('Finally')
+//   }
+// }
 
-processValues().then(result => console.log(result))
+// processValues().then(result => console.log(result))
 // 'Start' 'First' 'Error' 'Error' 'Finally'     -
 // 'Start' 'First' 'Error' 'Finally' 'Recovered' +
+
+
+// task 57
+
+
+function task1() {
+  console.log('A');
+  setTimeout(() => console.log('B'), 0);
+  Promise.resolve().then(() => console.log('C'));
+  Promise.resolve().then(() => setTimeout(() => console.log('D'), 0));
+  Promise.resolve().then(() => console.log('E'));
+  setTimeout(() => console.log('F'), 0);
+  console.log('G');
+}
+
+task1()
+
+// A C E G B D F  ---
+// A G C E B F D   +                       
